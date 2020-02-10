@@ -41,9 +41,9 @@ You can submit this App online at [https://doi.org/10.25663/brainlife.app.275](h
 
 ```json
 {
-        "dwis": ["./dwi1.tck", "./dwi2.tck"] 
-	"bvals": ["./bvals1.tck", "./bvals2.tck"]
-	"bvecs": ["./bvecs1.tck", "./bvecs2.tck"]
+"dwis": ["testdata/dwi1.nii.gz", "testdata/dwi2.nii.gz"],
+"bvals": ["testdata/dwi1.bvals", "testdata/dwi2.bvals"],
+"bvecs": ["testdata/dwi1.bvecs", "testdata/dwi2.bvecs"]
 }
 ```
 
