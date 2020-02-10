@@ -1,0 +1,63 @@
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:20:00
+#PBS -l vmem=30gb
+
+# Load mrtrix3. Version 3 is currently the default for mrtrix.
+module load mrtrix
+
+# Show commands running.
+set -x 
+set -e
+
+# Parse input file names from config.json. 
+dwi1=$(jq -r .diff1 config.json.sample)
+bvals1=$(jq -r .bvals1 config.json.sample)
+bvecs1=$(jq -r .bvecs1 config.json.sample)
+
+dwi2=$(jq -r .diff2 config.json.sample)
+bvals2=$(jq -r .bvals2 config.json.sample)
+bvecs2=$(jq -r .bvecs2 config.json.sample)
+
+# Inform user.
+echo "Converting input files to mrtrix format..."
+
+# Convert nifti to mif for use with mritrix3.
+mrconvert -fslgrad $bvecs1 $bvals1 $dwi1 raw1.mif --export_grad_mrtrix raw1.b -quiet -force
+mrconvert -fslgrad $bvecs2 $bvals2 $dwi2 raw2.mif --export_grad_mrtrix raw2.b -quiet -force
+
+# Inform user.
+echo "Merging dwi images..."
+
+# Concatenate dwi1 and dwi2 using mrcat.
+mrcat raw1.mif raw2.mif dwi_out.mif
+
+
+# Inform user.
+echo "Converting output files to nifti format for storage..."
+
+# Convert mif back to nifti for storage.
+mkdir -p output
+mrconvert diff_out.mif output/dwi.nii.gz -export_grad_fsl output/dwi.bvecs output/dwi.bvals -export_grad_mrtrix dwi_out.b -json_export dwi_out.json -quiet -force
+
+
+
+
+
+
+
+
+
+	singularity exec docker://brainlife/ashs-penntle_hippo:2.0.0 ashs_main.sh -a /atlas -g $t1 -f $t2 -w output/
+
+#fi
+#if [$atlas -eq "UPENN-PMC-3t"]; then
+#	singularity exec docker://brainlife/ashs-upennpmc:2.0.0 ashs_main.sh -a /atlas -g $t1 -f $t2 -w output/
+#fi
+
+
+
+
+# Check for output.
+#[ ! -s track.tck ] && exit 1
