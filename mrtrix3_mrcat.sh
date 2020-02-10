@@ -12,13 +12,9 @@ set -x
 set -e
 
 # Parse input file names from config.json. 
-dwi1=$(jq -r .dwi1 config.json.sample)
-bvals1=$(jq -r .bvals1 config.json.sample)
-bvecs1=$(jq -r .bvecs1 config.json.sample)
-
-dwi2=$(jq -r .dwi2 config.json.sample)
-bvals2=$(jq -r .bvals2 config.json.sample)
-bvecs2=$(jq -r .bvecs2 config.json.sample)
+dwi=$(jq -r .dwis config.json.sample)
+bvals=$(jq -r .bvals config.json.sample)
+bvecs=$(jq -r .bvecs config.json.sample)
 
 # Inform user.
 echo "Converting input files to mrtrix format..."
