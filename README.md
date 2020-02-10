@@ -5,6 +5,9 @@
 ### Author
 - Sophia Vinci-Booher (svincibo@indiana.edu)
 
+### Contributor
+- Soichi Hayashi (hayashis@iu.edu)
+
 ### Project director
 - Franco Pestilli (franpest@indiana.edu)
 
@@ -18,12 +21,11 @@ It is recommended that the merge is performed before preprocessing rather than a
 
 NOTE: mrcat does not do intensity normalization as would dwicat. This app will be updated to use dwicat when mrtrix3 releases dwicat.
 
-# MRCAT SOFTWARE CITATIONS
+# mrcat software citations
 
 Please cite this paper in reference to mrcat, a part of mrtrix3 software:
 
 Tournier, J.-D.; Smith, R. E.; Raffelt, D.; Tabbara, R.; Dhollander, T.; Pietsch, M.; Christiaens, D.; Jeurissen, B.; Yeh, C.-H. & Connelly, A. MRtrix3: A fast, flexible and open software framework for medical image processing and visualisation. NeuroImage, 2019, 202, 116137
-
 
 ### Funding 
 [![NSF-BCS-1734853](https://img.shields.io/badge/NSF_BCS-1734853-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1734853)
