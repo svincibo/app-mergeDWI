@@ -1,8 +1,5 @@
 {
-"dwi1": "testdata/dwi1.nii.gz",
-"bvals1": "testdata/dwi1.bvals",
-"bvecs1": "testdata/dwi1.bvecs",
-"dwi2": "testdata/dwi2.nii.gz",
-"bvals2": "testdata/dwi2.bvals",
-"bvecs2": "testdata/dwi2.bvecs"
+"dwis": ["testdata/dwi1.nii.gz", "testdata/dwi2.nii.gz"],
+"bvals": ["testdata/dwi1.bvals", "testdata/dwi2.bvals"],
+"bvecs": ["testdata/dwi1.bvecs", "testdata/dwi2.bvecs"]
 }
