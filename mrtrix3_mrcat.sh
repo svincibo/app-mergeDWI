@@ -21,7 +21,7 @@ echo "Converting input files to mrtrix format..."
 
 # Convert nifti to mif for use with mritrix3.
 inputs=[];
-for d in ${!dwi[@]}; do
+for d in ${!dwis[@]}; do
 
 	mrconvert -fslgrad ${bvecs[$d]} ${bvals[$d]} ${dwis[$d]} raw${d}.mif --export_grad_mrtrix raw${d}.b -quiet -force
 
