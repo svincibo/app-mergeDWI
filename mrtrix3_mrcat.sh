@@ -5,7 +5,7 @@
 #PBS -l vmem=30gb
 
 # Load mrtrix3. Version 3 is currently the default for mrtrix.
-module load mrtrix
+#module load mrtrix
 
 # Show commands running.
 set -x 
