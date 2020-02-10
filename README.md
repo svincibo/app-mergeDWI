@@ -19,6 +19,7 @@ An example application of this app is the scenario where two shells were collect
 
 It is recommended that the merge is performed before preprocessing rather than after preprocessing to avoid the possibility of misalignment between the anatomical and the first and second diffusion images.
 
+NOTE: This app does not currently do any dwi-to-dwi alignment. 
 NOTE: mrcat does not do intensity normalization as would dwicat. This app will be updated to use dwicat when mrtrix3 releases dwicat.
 
 # mrcat software citations
