@@ -30,9 +30,10 @@ done
 # Inform user.
 echo "Merging dwi images..."
 
-# Concatenate all dwi inputs using mrcat.
+# Get the names of all available mif files.
 inputs=$(ls raw*.mif)
 
+# Concatenate all dwi inputs using mrcat.
 mrcat $inputs dwi_out.mif
 
 # Inform user.
