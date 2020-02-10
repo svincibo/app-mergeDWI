@@ -2,8 +2,7 @@
 "dwi1": "testdata/dwi1.nii.gz",
 "bvals1": "testdata/dwi1.bvals",
 "bvecs1": "testdata/dwi1.bvecs",
-
 "dwi2": "testdata/dwi2.nii.gz",
 "bvals2": "testdata/dwi2.bvals",
-"bvecs2": "testdata/dwi2.bvecs",
+"bvecs2": "testdata/dwi2.bvecs"
 }
