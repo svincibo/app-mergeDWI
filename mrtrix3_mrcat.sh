@@ -12,7 +12,7 @@ set -x
 set -e
 
 # Parse input file names from config.json. 
-dwi=($(jq -r .dwis[] config.json))
+dwis=($(jq -r .dwis[] config.json))
 bvals=($(jq -r .bvals[] config.json))
 bvecs=($(jq -r .bvecs[] config.json))
 
@@ -23,7 +23,7 @@ echo "Converting input files to mrtrix format..."
 inputs=[];
 for d in ${!dwi[@]}; do
 
-	mrconvert -fslgrad ${bvecs[$d]} ${bvals[$d]} ${dwi[$d]} raw${d}.mif --export_grad_mrtrix raw${d}.b -quiet -force
+	mrconvert -fslgrad ${bvecs[$d]} ${bvals[$d]} ${dwis[$d]} raw${d}.mif --export_grad_mrtrix raw${d}.b -quiet -force
 
 done
 
