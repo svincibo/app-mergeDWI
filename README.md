@@ -13,7 +13,7 @@
 
 # app-mergeDWI
 
-Merge multiple DWI files into one DWI file using mrcat. More information on mrcat can be found here: https://mrtrix.readthedocs.io/en/latest/reference/commands/mrcat.html
+This app will merge multiple DWI files into one DWI file using mrcat. The input data are dwi images (two or more) and the output is one dwi image. More information on mrcat can be found here: https://mrtrix.readthedocs.io/en/latest/reference/commands/mrcat.html
 
 An example application of this app is the scenario where two shells were collected, but each shell was collected with it's own scan. In this example, it is desireable to concatenate -- merge -- the two shells before analyzing.
 
