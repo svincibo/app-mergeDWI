@@ -22,7 +22,15 @@ It is recommended that the merge is performed before preprocessing rather than a
 NOTE: This app does not currently do any dwi-to-dwi alignment. 
 NOTE: mrcat does not do intensity normalization as would dwicat. This app will be updated to use dwicat when mrtrix3 releases dwicat.
 
-# mrcat software citations
+### Citations
+
+We kindly ask that you cite the following articles when publishing papers and code using this code.
+
+Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). https://doi.org/10.1038/s41597-019-0073-y
+
+MIT Copyright (c) 2020 brainlife.io The University of Texas at Austin and Indiana University
+
+# --- mrcat software citations
 
 Please cite this paper in reference to mrcat, a part of mrtrix3 software:
 
