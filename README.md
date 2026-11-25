@@ -13,6 +13,38 @@
 
 # app-mergeDWI
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Concatenates two or more DWI series (with bvals/bvecs) into a single DWI with MRtrix3 3.0_RC3 mrcat.**
+
+Converts each input DWI to MRtrix format with its gradient table, concatenates them along the volume axis with mrcat and exports one NIfTI with merged bvals and bvecs. Use it when shells or runs were acquired in separate scans, ideally before preprocessing. It does no DWI-to-DWI alignment and no intensity normalization, so the inputs must share the same grid.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/dwi` |
+| 📤 **Outputs** | `neuro/dwi` |
+| 🐳 **Container** | `brainlife/mrtrix3:3.0_RC3` |
+| ⚙️ **Resources** | 1 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.275](https://doi.org/10.25663/brainlife.app.275) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `dwi` | `neuro/dwi` | yes | Two or more DWI datasets (multi) with bvals and bvecs. All series must have the same voxel grid; no alignment or intensity normalization is applied. |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `output` | `neuro/dwi` | Merged DWI (dwi.nii.gz) with concatenated bvals and bvecs and a JSON header export. |
+
+📚 **References used by this App:**
+- Avesani P, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+- Tournier J-D, et al. MRtrix3: A fast, flexible and open software framework for medical image processing and visualisation. NeuroImage (2019).
+
+<!-- brainlife-app:end -->
+
 This app will merge multiple DWI files into one DWI file using mrcat. The input data are dwi images (two or more) and the output is one dwi image. More information on mrcat can be found here: https://mrtrix.readthedocs.io/en/latest/reference/commands/mrcat.html
 
 An example application of this app is the scenario where two shells were collected, but each shell was collected with it's own scan. In this example, it is desireable to concatenate -- merge -- the two shells before analyzing.
